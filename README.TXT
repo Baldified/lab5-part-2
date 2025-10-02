@@ -30,3 +30,12 @@ ANSWERS
 
 30. containsKey()
 
+31. it returns null
+
+32. containsValue()
+
+34. they are similar in terms of collections, but Set does not allow duplicate values.
+
+35. there are no duplicates, no searching orders and is faster in HashSet
+
+36. searching the value will require the additional spaces
