@@ -11,6 +11,7 @@ import java.util.HashSet;
 public class InputReader
 {
     private Scanner reader;
+    private HashSet<String> jj;
 
     /**
      * Create a new InputReader that reads text from the text terminal.
@@ -33,5 +34,9 @@ public class InputReader
         String inputLine = reader.nextLine();
 
         return inputLine;
+    }
+    public void getInputViaHashSet()
+    {
+        
     }
 }

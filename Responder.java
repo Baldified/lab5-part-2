@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.HashMap;
+import java.util.*;
 
 /**
  * The responder class represents a response generator object. It is used
@@ -13,7 +15,7 @@ import java.util.Random;
 public class Responder
 {
     private Random randomGenerator;
-    private ArrayList<String> responses;
+    private HashMap<String, String> responses;
 
     /**
      * Construct a Responder
@@ -21,8 +23,8 @@ public class Responder
     public Responder()
     {
         randomGenerator = new Random();
-        responses = new ArrayList<>();
-        fillResponses();
+        responses = new HashMap<>();
+        fillResponsesMap();
     }
 
     /**
@@ -30,37 +32,46 @@ public class Responder
      * 
      * @return  A string that should be displayed as the response
      */
-    public String generateResponse()
+    public String generateResponse(HashSet<String> x)
     {
-        // Pick a random number for the index in the default response 
-        // list. The number will be between 0 (inclusive) and the size
-        // of the list (exclusive).
-        int index = randomGenerator.nextInt(responses.size());
-        return responses.get(index);
+        String answer;
+        for(String x2 : x) {
+           answer = responses.get(x2);
+           if (answer != null) {
+            return answer;
+           }
+        } 
+        
+        return pickDefaultResponse();
     }
 
+    public String pickDefaultResponse()
+    {
+        return "Default reponse to anything";
+    }
     /**
      * Build up a list of default responses from which we can pick one
      * if we don't know what else to say.
      */
-    private void fillResponses()
+    private void fillResponsesMap()
     {
-        responses.add("That sounds odd. Could you describe this in more detail?");
-        responses.add("""
+        responses.put("a", "That sounds odd. Could you describe this in more detail?");
+        responses.put("b", """
                       No other customer has ever complained about this before.
                       What is your system configuration?
                       """);
-        responses.add("I need a bit more information on that.");
-        responses.add("Have you checked that you do not have a dll conflict?");
-        responses.add("That is covered in the manual. Have you read the manual?");
-        responses.add("""
+        responses.put("c", "I need a bit more information on that.");
+        responses.put("d", "Have you checked that you do not have a dll conflict?");
+        responses.put("e", "That is covered in the manual. Have you read the manual?");
+        responses.put("f", """
                       Your description is a bit wishy-washy. Have you got an expert
                       there with you who could describe this more precisely?
                       """);
-        responses.add("That's not a bug, it's a feature!");
-        responses.add("Could you elaborate on that?");
-        responses.add("Have you tried running the app on your phone?");
-        responses.add("I just checked StackOverflow - they don't know either.");
+        responses.put("g", "That's not a bug, it's a feature!");
+        responses.put("h", "Could you elaborate on that?");
+        responses.put("i", "Have you tried running the app on your phone?");
+        responses.put("j", "I just checked StackOverflow - they don't know either.");
     }
+   
 }
 
