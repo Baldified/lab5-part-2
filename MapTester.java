@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class MapTester
 {
     // instance variables - replace the example below with your own
-    private HashMap contacts;
+    private HashMap<String, String> contacts;
     public MapTester()
     {
         contacts = new HashMap<>();
@@ -18,8 +18,8 @@ public class MapTester
     {
          contacts.put(name, number);
     }
-    public void lookupNumber(String name)
+    public String lookupNumber(String name)
     {
-        //return contacts.get(name);
+        return contacts.get(name);
     }
 }

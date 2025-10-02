@@ -24,4 +24,9 @@ ANSWERS
 
 26. size()
 
-27.
+28. it outputs the updated value
+
+29. it outputs the value of the key
+
+30. containsKey()
+
