@@ -39,4 +39,19 @@ public class InputReader
     {
         
     }
+    public HashSet<String> getInputViaSplit()
+    {
+        System.out.println("> ");
+        String inputLine = reader.nextLine();
+        
+        String[] myWords = inputLine.split(" ");
+        
+        HashSet<String> wordsSet = new HashSet();
+        
+        for (String word : myWords){
+            wordsSet.add(word);
+        }
+        
+        return wordsSet;
+    }
 }
