@@ -16,12 +16,18 @@ public class Responder
 {
     private Random randomGenerator;
     private HashMap<String, String> responses;
+    private String hello;
+    private String hi;
+    private String hey;
+    private DefaultResponses yeah;
+    private Random ddd;
 
     /**
      * Construct a Responder
      */
     public Responder()
     {
+        ddd = new Random();
         randomGenerator = new Random();
         responses = new HashMap<>();
         fillResponsesMap();
@@ -47,8 +53,17 @@ public class Responder
 
     public String pickDefaultResponse()
     {
-        return "Default reponse to anything";
+        do{
+            hi = yeah.get(ddd.nextInt(yeah.size()));
+        } while(hi.equals(hey));
+        hey = hi;
+        return hi;
+            
+        
     }
+
+        
+
     /**
      * Build up a list of default responses from which we can pick one
      * if we don't know what else to say.
