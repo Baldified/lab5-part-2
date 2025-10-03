@@ -21,6 +21,7 @@ public class Responder
     private String hey;
     private DefaultResponses yeah;
     private Random ddd;
+    private HashMap<Integer, String> ohYeah;
 
     /**
      * Construct a Responder
@@ -53,12 +54,11 @@ public class Responder
 
     public String pickDefaultResponse()
     {
-        do{
-            hi = yeah.get(ddd.nextInt(yeah.size()));
-        } while(hi.equals(hey));
-        hey = hi;
-        return hi;
+        
+        while(ohYeah == hi){
             
+        }
+       
         
     }
 
@@ -90,6 +90,11 @@ public class Responder
         responses.put("l", "Yes");
         responses.put("m", "Maybe");
     }
-   
+    public void defaultResponsesOK()
+    {
+        ohYeah.add("Default message 1");
+        ohYeah.add("Default message 2");
+        ohYeah.add("Default message 3");
+    }
 }
 
