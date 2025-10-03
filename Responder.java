@@ -71,6 +71,9 @@ public class Responder
         responses.put("h", "Could you elaborate on that?");
         responses.put("i", "Have you tried running the app on your phone?");
         responses.put("j", "I just checked StackOverflow - they don't know either.");
+        responses.put("k", "No");
+        responses.put("l", "Yes");
+        responses.put("m", "Maybe");
     }
    
 }
